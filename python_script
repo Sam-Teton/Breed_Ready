@@ -1,0 +1,98 @@
+print("~~~~~ Breed List ~~~~~")
+print("")
+
+dcc_at_pg = 39
+max_tbrd = 6
+
+cow_1 = 13267
+dim_1 = 75
+tbrd_1 = 1
+dslh_1 = 18
+paint_score_1 = 1
+
+cow_2 = 14890
+dim_2 = 49
+tbrd_2 = 0
+dslh_2 = 0
+paint_score_2 = 0
+
+cow_3 = 12632
+dim_3 = 220
+tbrd_3 = 5
+dslh_3 = 22
+paint_score_3 = 2
+
+cow_4 = 11765
+dim_4= 92
+tbrd_4 = 2
+dslh_4 = 36
+paint_score_4 = 3
+
+cow_5 = 11355
+dim_5 = 120
+tbrd_5 = 3
+dslh_5 = 11
+paint_score_5 = 1
+
+"___________________________"
+check_cow_1=[cow_1, dim_1, tbrd_1, dslh_1, paint_score_1]
+
+check_cow_2=[cow_2, dim_2, tbrd_2, dslh_2, paint_score_2]
+
+check_cow_3=[cow_3, dim_3, tbrd_3, dslh_3, paint_score_3]
+
+check_cow_4=[cow_4, dim_4, tbrd_4, dslh_4, paint_score_4]
+
+check_cow_5=[cow_5, dim_5, tbrd_5, dslh_5, paint_score_5]
+
+number_suspect = 5
+  
+print("Suspect heats:")
+print(f"Total count = {number_suspect}")
+print("")
+
+def check_this_cow(ID):
+    if ID[2]>= 6:
+      answer_1 = "Do not Breed"
+      notes_1 = "Bred too many times"
+    elif ID[4] == 2 and ID[3] >= 16 and ID[3] <= 24:
+      answer_1 = "Questionable"
+      notes_1 = "Are there other signs of heat?"
+    elif ID[4] == 2:
+      answer_1 = "Do not breed"
+      notes_1 = "Repaint" 
+    elif ID[4] >= 3:
+      answer_1 = "Do not breed" 
+      notes_1 = "Too much paint"
+    elif ID[1] < 50: 
+      answer_1 = "Do not breed" 
+      notes_1 = "Low DIM"
+    elif ID[3] <= 14:
+      answer_1 = "Do not breed"
+      notes_1 = "Quick cycle. Potentially cystic"
+    elif ID[3] >= 39:
+      answer_1 = "Do not breed"
+      notes_1 = "Preg check before breed"
+    elif ID[3] >= 25 and ID[3] <= 1: 
+      answer_1 = "Good to breed"
+      notes_1 = "Off cycle or not in heat last service"
+    elif ID[3] >= 25:
+      answer_1 = "Questionable"
+      notes_1 = "Are there other signs of heat?"
+    else: 
+      answer_1 = "Good to breed"
+      notes_1 = "Make sure to deposit slowly"
+   
+  
+    print(f"Cow ID = {ID[0]}")
+    print(f"DIM: {ID[1]}, TBRD: {ID[2]}, DSLH: {ID[3]}, Paint score: {ID[4]}")
+    print(answer_1)
+    print(notes_1)
+    print("")
+
+
+check_this_cow(check_cow_1)
+check_this_cow(check_cow_2)
+check_this_cow(check_cow_3)
+check_this_cow(check_cow_4)
+check_this_cow(check_cow_5)
