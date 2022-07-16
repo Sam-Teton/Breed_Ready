@@ -56,41 +56,41 @@ check_cow_5=[cow_5, dim_5, tbrd_5, dslh_5, rc_5, paint_score_5]
 # Perform AI Confidence Analysis and print insights.
 def check_this_cow(ID):
     if ID[2]>= 6:
-      recomendation = "Do Not Breed"
+      recommendation = "Do Not Breed"
       insights = "Bred too many times"
                # TBRD>6
     elif ID[4] == 1:
-      recomendation = "Do Not Breed"
+      recommendation = "Do Not Breed"
       insights = "Repro code = DNB"
                # RC=DNB
     elif ID[1] < vwp:
-      recomendation = "Do Not Breed"
+      recommendation = "Do Not Breed"
       insights = f"Animal's DIM is too low, wait until the VWP of {vwp}"
                # <VWP
     elif ID[4] >= 5: 
       if ID[5] <= 1:
-        recomendation = "Palpate to ensure open, then breed"
+        recommendation = "Palpate to ensure open, then breed"
         insights = "She is pregnant in the computer, but if she is open go for it"
       else:
-        recomendation = "Do Not Breed"
+        recommendation = "Do Not Breed"
         insights = "Pregnant"
     elif ID[3] <14:
-      recomendation = "Do Not Breed"
+      recommendation = "Do Not Breed"
       insights = "Service interval is too low"
     elif ID[3] >= 14 and ID[3] <= 25 and ID[5] == 3:
-      recomendation = "Do Not Breed"
+      recommendation = "Do Not Breed"
       insights = "Not enough painted rubbed off"
     elif ID[3] > 25 and ID[5] >= 2:
-      recomendation = "Do Not Breed"
+      recommendation = "Do Not Breed"
       insights = "Repaint"
     else: 
-      recomendation = "Good to breed"
+      recommendation = "Good to breed"
       insights = "Make sure to deposit slowly"
    
     print(f"Cow ID = {ID[0]}")
     print(f"DIM: {ID[1]}, TBRD: {ID[2]}, DSLH: {ID[3]}, RC: {ID[4]}, Paint score: {ID[5]}")
-    print(recomendation)
-    print(insights)
+    print(f"Recommendation: {recommendation}")
+    print(f"Insights: {insights}")
     print("")
 
 
