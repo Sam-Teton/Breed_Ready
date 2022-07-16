@@ -2,7 +2,7 @@
 
 Program for dairy producers to provide insights on AI confidence from qualitative and quantitative data.
 
-python_script is script for a python program that gives recommendation and insights on breeding eligiability.
+python_script is python script for a program that gives recommendation and insights on breeding eligiability.
 
 The user needs to enter two facility specific metrics (vwp and max_tbrd).
      Leave the total number of suspects as 5 until the program can be updates. 
