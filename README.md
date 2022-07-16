@@ -15,6 +15,7 @@ The script contains:
 - if, elif, and else statements
 - lists
 
+~~~~~
 ~~~~~ Breed List ~~~~~
 
 Suspect heats:
@@ -25,3 +26,4 @@ DIM: 75, TBRD: 1, DSLH: 18, Paint score: 1
 Recommendation: Good to breed
 Insights: Make sure to deposit slowly
 
+...
